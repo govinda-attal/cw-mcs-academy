@@ -1,0 +1,31 @@
+[package]
+name = "membership"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+library = []
+mt = ["library", "cw-multi-test", "anyhow"]
+
+[dependencies]
+serde =  {workspace=true}
+thiserror = {workspace=true}
+cosmwasm-std = {workspace=true}
+cw-storage-plus =  {workspace=true}
+schemars =  {workspace=true}
+cosmwasm-schema =  {workspace=true}
+cw-utils ={workspace=true}
+proxy = { version = "*", path = "../proxy", features = ["library"]}
+distribution = { version = "*", path = "../distribution", features = ["library"]}
+common = { version="*", path = "../../common" }
+anyhow = { workspace=true, optional = true }
+cw-multi-test = { workspace=true, optional = true }
+
+[dev-dependencies]
+anyhow = {workspace=true}
+cw-multi-test = {workspace=true}
+proxy = { path = "../proxy", features = ["mt"] }
+distribution = { path = "../distribution", features = ["mt"] }

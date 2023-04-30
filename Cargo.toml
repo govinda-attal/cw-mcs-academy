@@ -1,0 +1,15 @@
+[workspace]
+members = ["common", "contracts/*"]
+resolver = "2"
+
+
+[workspace.dependencies]
+serde = "1.0.152"
+cosmwasm-std = "1.2.3"
+cw-storage-plus = "1.0.1"
+schemars = "0.8.11"
+cosmwasm-schema = "1.1.9"
+cw-utils = "1.0.1"
+anyhow = "1.0.70"
+cw-multi-test = "0.16.2"
+thiserror = "1.0.38"
